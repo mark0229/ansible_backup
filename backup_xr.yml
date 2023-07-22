@@ -1,0 +1,12 @@
+---
+- name: configuration backup
+  hosts: CISCO-XR*
+  gather_facts: false
+  tasks:
+   - name: config backup
+     ios_config:
+      backup: yes
+      backup_options:
+       dir_path: /etc/ansible/backup/IOSXR
+...
+

@@ -1,0 +1,12 @@
+---
+- name: configuration backup
+  hosts: JUNOS*
+  gather_facts: false  
+  tasks:
+   - name: config backup
+     nxos_config:
+      backup: yes
+      backup_options:
+       dir_path: /etc/ansible/backup/JUNOS
+...
+
